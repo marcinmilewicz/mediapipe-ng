@@ -1,0 +1,27 @@
+<div class="app-container">
+  <header class="header">
+    <div class="header-content">
+      <h1 class="app-title">
+        <span class="title-icon">✋</span>
+        MediaPipe Hand Tracking Demo
+      </h1>
+      <nav class="navigation">
+        <a routerLink="/basic-gestures" routerLinkActive="active" class="nav-link">
+          Basic Gestures
+        </a>
+
+        <a routerLink="/custom-gestures" routerLinkActive="active" class="nav-link">
+          Custom Gestures
+        </a>
+
+        <a routerLink="/rps-game" routerLinkActive="active" class="nav-link">
+          Rock Paper Scissors
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

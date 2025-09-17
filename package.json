@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:mediapipe-ng": "ng build mediapipe-ng",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -28,10 +28,13 @@
     "@angular/forms": "^20.3.0",
     "@angular/platform-browser": "^20.3.0",
     "@angular/router": "^20.3.0",
+    "@mediapipe/tasks-vision": "^0.10.22-rc.20250304",
+    "prettier": "^3.6.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
+    "@angular/build": "^20.3.1",
     "@angular/cli": "^20.3.1",
     "@angular/compiler-cli": "^20.3.0",
     "@types/jasmine": "~5.1.0",
@@ -41,6 +44,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "ng-packagr": "^20.3.0",
     "typescript": "~5.9.2"
   }
 }

@@ -6,6 +6,11 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
+    "paths": {
+      "mediapipe-ng": [
+        "./dist/mediapipe-ng"
+      ]
+    },
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "skipLibCheck": true,
@@ -22,5 +27,19 @@
     "typeCheckHostBindings": true,
     "strictTemplates": true
   },
-  "files": []
+  "files": [],
+  "references": [
+    {
+      "path": "./projects/mediapipe-ng/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/mediapipe-ng/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/mediapipe-ng-app/tsconfig.app.json"
+    },
+    {
+      "path": "./projects/mediapipe-ng-app/tsconfig.spec.json"
+    }
+  ]
 }

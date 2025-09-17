@@ -1,0 +1,28 @@
+<div class="gesture-container">
+  <div class="section-header">
+    <h2 class="section-title">Basic Gestures & Visualization</h2>
+    <p class="section-description">
+      This demo shows real-time hand tracking with MediaPipe. Try different hand gestures and watch
+      them being recognized in real-time.
+    </p>
+  </div>
+
+  <div class="demo-content">
+    <div class="video-section">
+      <app-camera
+        class="video-container"
+        [isRunning]="tracking?.predictionRunning()"
+        (onElementReady)="onCameraReady($event)"
+      />
+    </div>
+
+    <div class="info-section">
+      <app-gesture-status
+        [gesture]="currentGesture()"
+        [information]="currentGestureInformation()"
+        class="gesture-status"
+      />
+      <app-gesture-guide [gestures]="allHandledGesture()" class="gesture-guide" />
+    </div>
+  </div>
+</div>
