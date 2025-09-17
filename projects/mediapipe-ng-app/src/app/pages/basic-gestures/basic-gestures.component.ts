@@ -81,8 +81,9 @@ export class BasicGesturesComponent implements OnDestroy {
     });
 
     this.tracking.gestureRecognizerResult.pipe(filter(Boolean)).subscribe((results) => {
-      this.currentGestureInformation.set(informationResultParser(results).description);
-      this.currentGesture.set(GESTURE_MAP[gestureResultParser(results) ?? 'None']);
+      this.currentGestureInformation.set(informationResultParser()(results).description);
+      this.currentGesture.set(GESTURE_MAP[gestureResultParser()(results) ?? 'None']);
+      console.log(results)
     });
   }
 
