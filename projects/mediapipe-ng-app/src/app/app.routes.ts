@@ -15,6 +15,11 @@ export const routes: Routes = [
       import('./pages/custom-gestures/custom-gestures.component').then(({ CustomGesturesComponent }) => CustomGesturesComponent),
   },
   {
+    path: 'both-gestures',
+    loadComponent: () =>
+      import('./pages/both-gestures/custom-gestures.component').then(({ CustomGesturesComponent }) => CustomGesturesComponent),
+  },
+  {
     path: 'rps-game',
     loadComponent: () =>
       import('./pages/rps-game/rps-game.component').then((c) => c.RpsGameComponent),

@@ -1,7 +1,7 @@
 {
   "arrowParens": "always",
   "endOfLine": "auto",
-  "printWidth": 140,
+  "printWidth": 180,
   "singleQuote": true,
   "tabWidth": 2,
   "trailingComma": "es5",
