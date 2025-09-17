@@ -10,7 +10,9 @@ import { RecognizedGesture } from './.././../utils';
     <div class="gesture-display" [ngClass]="{ recognized: gesture()?.name !== 'None' }">
       <span class="gesture-icon">{{ gesture()?.icon }}</span>
       <span class="gesture-name">{{ gesture()?.description }}</span>
-      <span> {{ information() }}</span>
+      @if (information()) {
+        <span> {{ information() }}</span>
+      }
     </div>`,
   styleUrls: ['./gesture-status.component.scss'],
 })

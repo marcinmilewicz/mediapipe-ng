@@ -1,12 +1,13 @@
 import { GestureRecognizerResult } from '@mediapipe/tasks-vision';
 import { GestureType } from '../gesture-tracking.model';
+type IncludesNone<T extends string> = 'None' extends T ? T : never;
 
 export const gestureResultParser =
   (index = 0) =>
-  (results: GestureRecognizerResult): GestureType => {
+  <Type extends string = GestureType>(results: GestureRecognizerResult): IncludesNone<Type> => {
     if (!results.gestures.length || index >= results.gestures.length) {
-      return 'None';
+      return 'None' as IncludesNone<Type>;
     }
 
-    return results.gestures[index][0].categoryName as GestureType;
+    return results.gestures[index][0].categoryName as IncludesNone<Type>;
   };
