@@ -7,9 +7,9 @@ import {
   informationResultParser,
 } from 'mediapipe-ng';
 import { filter } from 'rxjs';
-import { Camera } from '../../components/camera/camera.component';
-import { GestureGuide } from '../../components/gesture-guide/gesture-guide.component';
-import { GestureStatus } from '../../components/gesture-status/gesture-status.component';
+import { Camera } from '../../components/camera/camera';
+import { GestureGuide } from '../../components/gesture-guide/gesture-guide';
+import { GestureStatus } from '../../components/gesture-status/gesture-status';
 import { createGestureMap } from '../../utils';
 
 const EXTENDED_GESTURE = [
@@ -77,10 +77,10 @@ const GESTURE_MAP = createGestureMap(EXTENDED_GESTURE);
   selector: 'app-custom-gestures',
   standalone: true,
   imports: [CommonModule, GestureGuide, Camera, GestureStatus],
-  templateUrl: './custom-gestures.component.html',
-  styleUrls: ['./custom-gestures.component.scss'],
+  templateUrl: './custom-gestures.html',
+  styleUrls: ['./custom-gestures.scss'],
 })
-export class CustomGesturesComponent implements OnDestroy {
+export class CustomGestures implements OnDestroy {
   private readonly handTrackingService = inject(GestureTrackingService);
 
   protected readonly allHandledGesture = signal(EXTENDED_GESTURE.slice(0, -1));

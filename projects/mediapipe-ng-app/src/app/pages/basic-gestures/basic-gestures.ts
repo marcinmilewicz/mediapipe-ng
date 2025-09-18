@@ -7,9 +7,9 @@ import {
   informationResultParser,
 } from 'mediapipe-ng';
 import { filter } from 'rxjs';
-import { Camera } from '../../components/camera/camera.component';
-import { GestureGuide } from '../../components/gesture-guide/gesture-guide.component';
-import { GestureStatus } from '../../components/gesture-status/gesture-status.component';
+import { Camera } from '../../components/camera/camera';
+import { GestureGuide } from '../../components/gesture-guide/gesture-guide';
+import { GestureStatus } from '../../components/gesture-status/gesture-status';
 import { createGestureMap } from '../../utils';
 
 const BASIC_GESTURE = [
@@ -56,10 +56,10 @@ const GESTURE_MAP = createGestureMap(BASIC_GESTURE);
   selector: 'app-basic-gestures',
   standalone: true,
   imports: [CommonModule, GestureGuide, Camera, GestureStatus],
-  templateUrl: './basic-gestures.component.html',
-  styleUrls: ['./basic-gestures.component.scss'],
+  templateUrl: './basic-gestures.html',
+  styleUrls: ['./basic-gestures.scss'],
 })
-export class BasicGesturesComponent implements OnDestroy {
+export class BasicGestures implements OnDestroy {
   private readonly handTrackingService = inject(GestureTrackingService);
 
   protected readonly currentGesture = signal(GESTURE_MAP['None']);
@@ -83,7 +83,7 @@ export class BasicGesturesComponent implements OnDestroy {
     this.tracking.gestureRecognizerResult.pipe(filter(Boolean)).subscribe((results) => {
       this.currentGestureInformation.set(informationResultParser()(results).description);
       this.currentGesture.set(GESTURE_MAP[gestureResultParser()(results) ?? 'None']);
-      console.log(results)
+      console.log(results);
     });
   }
 

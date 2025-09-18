@@ -14,7 +14,7 @@ import { RecognizedGesture } from '../../utils';
         </div>
       }
     </div>`,
-  styleUrls: ['./gesture-guide.component.scss'],
+  styleUrls: ['./gesture-guide.scss'],
 })
 export class GestureGuide {
   gestures = input<RecognizedGesture[]>();

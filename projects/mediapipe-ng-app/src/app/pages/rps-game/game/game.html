@@ -1,0 +1,43 @@
+<div class="game-choices">
+  <div class="choice-container">
+    <h4>Your Choice</h4>
+    <div class="choice-display">
+      <div class="choice-icon" [class]="gameData().playerChoice || 'waiting'">
+        {{ getChoiceIcon(gameData().playerChoice) }}
+      </div>
+      <div class="choice-name">{{ getChoiceName(gameData().playerChoice) }}</div>
+    </div>
+  </div>
+
+  <div class="vs-divider">VS</div>
+
+  <div class="choice-container">
+    <h4>Computer Choice</h4>
+    <div class="choice-display">
+      <div class="choice-icon" [class]="gameData().computerChoice || 'waiting'">
+        {{ getChoiceIcon(gameData().computerChoice) }}
+      </div>
+      <div class="choice-name">{{ getChoiceName(gameData().computerChoice) }}</div>
+    </div>
+  </div>
+</div>
+
+@if (gameState() === 'result') {
+  <div class="game-result">
+    <div class="result-display" [class]="gameData().result">
+      <div class="result-icon">{{ getResultIcon() }}</div>
+      <div class="result-text">{{ getResultText() }}</div>
+    </div>
+  </div>
+}
+
+<div class="game-controls">
+  <button
+    class="game-button"
+    [class]="getButtonClass()"
+    (click)="startGame()"
+    [disabled]="gameState() === 'countdown' || gameState() === 'playing'"
+  >
+    {{ getButtonText() }}
+  </button>
+</div>

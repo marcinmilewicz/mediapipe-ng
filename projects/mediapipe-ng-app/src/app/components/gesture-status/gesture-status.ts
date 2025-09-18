@@ -14,7 +14,7 @@ import { RecognizedGesture } from './.././../utils';
         <span> {{ information() }}</span>
       }
     </div>`,
-  styleUrls: ['./gesture-status.component.scss'],
+  styleUrls: ['./gesture-status.scss'],
 })
 export class GestureStatus {
   gesture = input<RecognizedGesture>();

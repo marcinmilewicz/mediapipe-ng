@@ -1,0 +1,39 @@
+<div class="rps-container">
+  <div class="section-header">
+    <h2 class="section-title">Rock Paper Scissors</h2>
+    <p class="section-description">
+      Play Rock Paper Scissors using hand gestures! Make your gesture when the countdown finishes.
+    </p>
+  </div>
+
+  <div class="demo-content">
+    <div class="video-section">
+      <div class="video-container">
+        <app-camera
+          class="video-container"
+          [isRunning]="tracking?.predictionRunning()"
+          (onElementReady)="onCameraReady($event)"
+        />
+
+        <app-game-overlay class="game-overlay" />
+      </div>
+
+      <div class="current-gesture">
+        <app-gesture-status [gesture]="currentGesture()" class="gesture-status" />
+      </div>
+    </div>
+
+    <div class="game-section">
+      <app-score-board
+        class="score-board"
+        [playerScore]="gameData().playerScore"
+        [computerScore]="gameData().computerScore"
+      />
+      <div class="game-area">
+        <app-game />
+      </div>
+
+      <app-gesture-guide [gestures]="allHandledGesture()" class="gesture-guide" />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+@if (gameService.isCountdown()) {
+  <div class="countdown">
+    <div class="countdown-number">{{ gameService.countdown() }}</div>
+  </div>
+}
+
+@if (gameService.isPlaying()) {
+  <div class="gesture-detection">
+    <div class="detection-prompt">Make your gesture!</div>
+  </div>
+}

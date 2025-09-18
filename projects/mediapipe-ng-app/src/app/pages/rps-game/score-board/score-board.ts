@@ -16,7 +16,7 @@ import { Component, input } from '@angular/core';
         <span class="score-value">{{ computerScore() }}</span>
       </div>
     </div>`,
-  styleUrls: ['./score-board.component.scss'],
+  styleUrls: ['./score-board.scss'],
 })
 export class ScoreBoard {
   playerScore = input();

@@ -14,7 +14,7 @@ import { AfterViewInit, Component, ElementRef, input, output, viewChild } from '
         </div>
       }
     </p>`,
-  styleUrls: ['./camera.component.scss'],
+  styleUrls: ['./camera.scss'],
 })
 export class Camera implements AfterViewInit {
   private readonly videoElementRef =
